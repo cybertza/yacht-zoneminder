@@ -13,7 +13,9 @@ platform: linux
 restart_policy: unless-stopped
 ports:
 - 8443:443/tcp
-- 9000:9000/tcp
+  label: Web Interface
+- 9005:9000/tcp
+  name: API Port (def 9000 same as portainer)
 volumes:
 - container: "/config"
   bind: "!config/zoneminder"
