@@ -1,8 +1,8 @@
 ---
 type: 1
 title: Zoneminder (dlandon)
-name: dlandon/zoneminder
-description: This will pull the zoneminder docker image
+name: ZoneMinderCCTV
+description: This will pull the dlandon/zoneminder zoneminder docker image. https://hub.docker.com/r/dlandon/zoneminder
 logo: https://d36jcksde1wxzq.cloudfront.net/be7833db9bddb4494d2a7c3dd659199a.png
 image: dlandon/zoneminder
 note: If you have opted to install face recognition, and/or have opted to download the yolo models, it takes time.
@@ -44,4 +44,23 @@ env:
   default: "0"
 - name: INSTALL_FACE
   label: INSTALL_FACE
+  default: "0"
+- name: INSTALL_TINY_YOLOV3
+  label: INSTALL_TINY_YOLOV3
+  default: "0"
+- name: INSTALL_YOLOV3
+  label: INSTALL_YOLOV3
+  default: "0"
+
+- name: INSTALL_TINY_YOLOV4
+  label: INSTALL_TINY_YOLOV4
+  default: "0"
+- name: INSTALL_YOLOV4
+  label: INSTALL_YOLOV4
+  default: "0"
+- name: MULTI_PORT_START
+  label: MULTI_PORT_START
+  default: "0"
+- name: MULTI_PORT_END
+  label: MULTI_PORT_END
   default: "0"
