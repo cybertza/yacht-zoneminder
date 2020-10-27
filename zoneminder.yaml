@@ -1,0 +1,40 @@
+---
+type: 1
+title: ZoneMinder
+name: ZoneMinder (dlandon/zoneminder)
+description: This will pull the zoneminder docker image
+logo: https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/transmission-icon.png
+image: dlandon/zoneminder
+note: This is my first try
+categories:
+- Other
+- Tools
+platform: linux
+restart_policy: unless-stopped
+ports:
+- 8443:443/tcp/tcp
+- 9000:9000/tcp
+volumes:
+- container: "/data"
+  bind: "!downloads"
+- container: "/etc/localtime"
+  bind: "!localtime"
+sysctls:
+- net.ipv6.conf.all.disable_ipv6: '0'
+cap_add:
+- NET_ADMIN
+env:
+- name: PUID
+  label: PUID
+  default: '1000'
+- name: PGID
+  label: PGID
+  default: '1000'
+- name: TimeZone
+  label: TimeZone
+  description: TimeZone
+  default: "America/New_York"
+- name: SHMEM
+  label: SHMEM
+  description: TimeZone
+  default: "America/New_York"
