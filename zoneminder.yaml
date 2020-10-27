@@ -4,21 +4,21 @@ title: Zoneminder (dlandon)
 name: dlandon/zoneminder
 description: This will pull the zoneminder docker image
 logo: https://d36jcksde1wxzq.cloudfront.net/be7833db9bddb4494d2a7c3dd659199a.png
-image: dev/application:latest
-note: This is a note
+image: dlandon/zoneminder
+note: If you have opted to install face recognition, and/or have opted to download the yolo models, it takes time.
 categories:
 - Other
 - Tools
 platform: linux
 restart_policy: unless-stopped
 ports:
-- 9091:9091/tcp
-- 9090:9090/tcp
+- 8443:443/tcp
+- 9000:9000/tcp
 volumes:
-- container: "/data"
-  bind: "!downloads"
-- container: "/etc/localtime"
-  bind: "!localtime"
+- container: "/config"
+  bind: "!config/zoneminder"
+- container: "/var/cache/zoneminder"
+  bind: "!download"
 sysctls:
 - net.ipv6.conf.all.disable_ipv6: '0'
 cap_add:
@@ -26,11 +26,22 @@ cap_add:
 env:
 - name: PUID
   label: PUID
-  default: '1000'
+  default: '99'
 - name: PGID
   label: PGID
-  default: '1000'
-- name: EnvWithDescription
-  label: EnvWithDescription
-  description: This is a description
-  default: default
+  default: '100'
+- name: TZ
+  label: TimeZone
+  description: TimeZone
+  default: "America/New_York"
+- name: SHMEM
+  label: SHMEM
+  description: SHMEM
+  default: "50%"
+- name: INSTALL_HOOK
+  label: INSTALL_HOOK
+  description: INSTALL_HOOK
+  default: "0"
+- name: INSTALL_FACE
+  label: INSTALL_FACE
+  default: "0"
