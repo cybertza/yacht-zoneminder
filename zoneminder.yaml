@@ -63,3 +63,6 @@ env:
 - name: MULTI_PORT_END
   label: MULTI_PORT_END
   default: "0"
+- name: ADVANCED_SCRIPT
+  label: ADVANCED_SCRIPT
+  default: "0"
