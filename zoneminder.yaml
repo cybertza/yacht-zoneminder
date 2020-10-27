@@ -51,7 +51,6 @@ env:
 - name: INSTALL_YOLOV3
   label: INSTALL_YOLOV3
   default: "0"
-
 - name: INSTALL_TINY_YOLOV4
   label: INSTALL_TINY_YOLOV4
   default: "0"
