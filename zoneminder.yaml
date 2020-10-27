@@ -1,19 +1,19 @@
 ---
 type: 1
-title: ZoneMinder
-name: ZoneMinder (dlandon/zoneminder)
-description: This will pull the zoneminder docker image
+title: App Title
+name: container-name
+description: This is a description.
 logo: https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/transmission-icon.png
-image: dlandon/zoneminder
-note: This is my first try
+image: dev/application:latest
+note: This is a note
 categories:
 - Other
 - Tools
 platform: linux
 restart_policy: unless-stopped
 ports:
-- 8443:443/tcp/tcp
-- 9000:9000/tcp
+- 9091:9091/tcp
+- 9090:9090/tcp
 volumes:
 - container: "/data"
   bind: "!downloads"
@@ -30,11 +30,7 @@ env:
 - name: PGID
   label: PGID
   default: '1000'
-- name: TimeZone
-  label: TimeZone
-  description: TimeZone
-  default: "America/New_York"
-- name: SHMEM
-  label: SHMEM
-  description: TimeZone
-  default: "America/New_York"
+- name: EnvWithDescription
+  label: EnvWithDescription
+  description: This is a description
+  default: default
