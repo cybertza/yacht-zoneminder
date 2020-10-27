@@ -1,8 +1,10 @@
 # yacht-zoneminder
 A Yacht Config yaml for docker
 
-Unable to get this to work at the moment, Keep getting Internal server error when trying to add file to Yacht
+Add Template -
+Name: ZoneMinder
+URL: https://raw.githubusercontent.com/cybertza/yacht-zoneminder/main/zoneminder.yaml
 
-Will try again in a few days if i get time.
+
 
 
