@@ -13,7 +13,7 @@ platform: linux
 restart_policy: unless-stopped
 ports:
 - WebUI: 8443:443/tcp
-- Other: 9005:9000/tcp
+- API (Moved for Portainer): 9005:9000/tcp
 volumes:
 - container: "/config"
   bind: "!config/zoneminder"
