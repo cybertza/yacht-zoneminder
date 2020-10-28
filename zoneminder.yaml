@@ -12,8 +12,8 @@ categories:
 platform: linux
 restart_policy: unless-stopped
 ports:
-- 8443:443/tcp
-- 9005:9000/tcp
+- WebUI: 8443:443/tcp
+- Other: 9005:9000/tcp
 volumes:
 - container: "/config"
   bind: "!config/zoneminder"
